@@ -4,10 +4,10 @@ This is a Kali Nethunter Xfce moderated some things and environment to make it l
 [Disable Phantom Process](https://github.com/KitsunedFox/termux-monet?tab=readme-ov-file#Phantom-Process-Killer)
 
 ## Preview
-### kali@localhost
+### 🐉kali@localhost🐉
 ![](https://github.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/blob/main/KaliNethunter-Moderate-Proot-On-Termux-Kali.png)
 
-### root@localhost
+### 🐉root@localhost🐉
 ![](https://github.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/blob/main/KaliNethunter-Moderate-Proot-On-Termux-Root.png)
 
 # To Do

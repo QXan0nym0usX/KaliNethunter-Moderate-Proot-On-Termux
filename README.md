@@ -11,3 +11,6 @@ This is a Kali Nethunter Xfce moderated some things and environment to make it l
 ![](https://github.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/blob/main/KaliNethunter-Moderate-Proot-On-Termux-Root.png)
 
 # To Do
+
+#### First,Download Kali-Linux Distro From Here. 
+[Download] (https://archive.org/download/kali.tar/kali.tar.xz)

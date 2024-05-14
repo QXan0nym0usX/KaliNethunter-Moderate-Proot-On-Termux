@@ -1,0 +1,15 @@
+#!/bin/bash
+
+login_as_user() {
+    proot-distro login kali --user kali --shared-tmp --bind /dev/null:/proc/sys/kernel/cap_last_cap
+}
+
+login_as_root() {
+    proot-distro login kali --shared-tmp --bind /dev/null:/proc/sys/kernel/cap_last_cap
+}
+
+if [[ "$1" == "-r" ]]; then
+    login_as_root
+else
+    login_as_user
+fi

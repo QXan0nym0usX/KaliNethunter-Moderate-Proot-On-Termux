@@ -39,6 +39,8 @@ if [ -f "$HOME/AutomaticInstall/termux.properties" ]; then
 fi
 ########################################################################################
 
+rm -rf AutomaticInstall
+
 echo "Installing my zsh"
 cd $HOME
 wget -q  https://github.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/raw/main/AutomaticInstall/myzsh.tar.xz

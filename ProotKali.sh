@@ -54,3 +54,11 @@ mv kali.sh $PREFIX/etc/proot-distro
 sleep 1
 mv kali $PREFIX/bin
 proot-distro restore /sdcard/download/kali.tar.xz > /dev/null 2>&1
+sleep 1
+
+echo "Done"
+sleep 2
+echo "You can now log in with kali"
+sleep 2
+echo "Use the command kali, and kali -r with root without password"
+sleep 2

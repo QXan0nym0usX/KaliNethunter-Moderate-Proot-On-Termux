@@ -12,5 +12,5 @@ This is a Kali Nethunter Xfce moderated some things and environment to make it l
 
 # To Do
 
-#### First,Download Kali-Linux Distro From Here. 
+#### First, Download Kali-Linux Distro From Here. [6.5GB]
 [Download](https://archive.org/download/kali.tar/kali.tar.xz)

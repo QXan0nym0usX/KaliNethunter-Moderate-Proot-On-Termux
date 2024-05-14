@@ -6,7 +6,7 @@ pkg update && pkg upgrade -y
 
 echo "Installing packages Termux"
 sleep 2
-pkg up -y && pkg i -y x11-repo && pkg i -y zsh proot-distro pulseaudio termux-x11-nightly pkg install mesa-zink virglrenderer-mesa-zink vulkan-loader-android angle-android virglrenderer-android
+pkg up -y && pkg i -y x11-repo && pkg i -y zsh proot-distro pulseaudio termux-x11-nightly && pkg install wget git proot axel mesa-zink virglrenderer-mesa-zink vulkan-loader-android angle-android virglrenderer-android
 
 #####################################################################################
 echo "Downloading some things"
@@ -53,6 +53,4 @@ wget -q https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot
 mv kali.sh $PREFIX/etc/proot-distro
 sleep 1
 mv kali $PREFIX/bin
-proot-distro restore /sdcard/download/kali.tar.xz
-
-
+proot-distro restore /sdcard/download/kali.tar.xz > /dev/null 2>&1

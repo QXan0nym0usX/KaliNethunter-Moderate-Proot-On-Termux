@@ -6,7 +6,7 @@ pkg update && pkg upgrade -y
 
 echo "Installing packages Termux"
 sleep 2
-pkg up -y && pkg i -y x11-repo && pkg i -y zsh proot-distro pulseaudio termux-x11-nightly && pkg install wget git proot axel mesa-zink virglrenderer-mesa-zink vulkan-loader-android angle-android virglrenderer-android
+pkg up -y && pkg i -y x11-repo && pkg i -y zsh proot-distro pulseaudio termux-x11-nightly && pkg install wget git proot axel angle-android virglrenderer-android
 
 #####################################################################################
 echo "Downloading some things"

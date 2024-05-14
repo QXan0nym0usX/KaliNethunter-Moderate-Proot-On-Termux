@@ -13,4 +13,54 @@ This is a Kali Nethunter Xfce moderated some things and environment to make it l
 # To Do
 
 #### First, Download Kali-Linux Distro From Here. [6.5GB]
-[Download](https://drive.google.com/file/d/10yWVSROO6lSX3U-AyvqPRKl50jOLnIwv/view?usp=drivesdk)
+[Download](https://drive.google.com/file/d/10yWVSROO6lSX3U-AyvqPRKl50jOLnIwv/view?usp=drivesdk
+)
+
+## Installation
+
+Download kali.tar.xz to Device's Download folder first. 
+
+### Give Storage Permission
+
+```
+termux-setup-storage
+```
+
+### In your terminal, paste this. It will take 1 hour or 2 hours
+
+```
+wget https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/ProotKali.sh && bash ProotKali.sh
+```
+
+### Login again to termux
+
+```
+exit
+```
+
+## Put the command to start Kali distro
+
+```
+kali
+```
+
+### Put the command to start Kali distro with root
+
+```
+kali -r
+```
+
+### Start ProotKali Desktop
+
+```
+kalis
+```
+
+## Termux 
+[Download](https://github.com/termux/termux-app/releases/download/v0.118.0/termux-app_v0.118.0+github-debug_universal.apk) 
+
+## Termux-x11 
+[Download](https://archive.org/download/termux-x11/app-universal-debug.apk) 
+
+## Termux-x11 Custom Resolution
+1920:1080

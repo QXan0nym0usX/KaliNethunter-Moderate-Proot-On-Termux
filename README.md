@@ -1,5 +1,5 @@
 # KaliNethunter-Moderate-Proot-On-Termux
-This is a Kali Nethunter Xfce moderated some things and environment to make it look prettier, you can also run some .exe stuff in this Kali Nethunter (Minimum to run games is 8GB or 12GB). If you install this proot-distro on a version of Android 12 or later, you have to disable Phantom process killer.
+This is a Kali Nethunter Xfce moderated some things and environment to make it look prettier, you can also run some .exe stuff in this Kali Nethunter (Minimum to run games is 8GB or 12GB RAM). If you install this proot-distro on a version of Android 12 or later, you have to disable Phantom process killer.
 
 [Disable Phantom Process](https://github.com/KitsunedFox/termux-monet?tab=readme-ov-file#Phantom-Process-Killer)
 

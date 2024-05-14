@@ -37,6 +37,10 @@ wget https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On
 ```
 exit
 ```
+Before login to proot,start termux-x11 first. 
+``` 
+termux-x11 :1 
+```
 
 ## Put the command to start Kali distro
 

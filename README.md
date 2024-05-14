@@ -26,7 +26,7 @@ Download kali.tar.xz to Device's Download folder first.
 termux-setup-storage
 ```
 
-### In your terminal, paste this. It will take 1 hour or 2 hours
+### In your terminal, paste this. It will take half an hour or 1 hour
 
 ```
 wget https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/ProotKali.sh && bash ProotKali.sh

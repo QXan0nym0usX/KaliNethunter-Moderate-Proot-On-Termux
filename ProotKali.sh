@@ -37,9 +37,11 @@ if [ -f "$HOME/AutomaticInstall/termux.properties" ]; then
     rm -f $HOME/.termux/termux.properties
     mv $HOME/AutomaticInstall/termux.properties $HOME/.termux/termux.properties
 fi
-########################################################################################
 
-rm -rf AutomaticInstall
+##Remove AutomaticInstall folder
+rm -rf $HOME/AutomaticInstall
+
+########################################################################################
 
 echo "Installing my zsh"
 cd $HOME
@@ -47,6 +49,7 @@ wget -q  https://github.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/raw
 tar -xvJf myzsh.tar.xz && mv ~/zsh/.* ~/
 rm -rf ~/zsh
 chsh -s zsh
+rm -rf $HOME myzsh.tar.xz
 sleep 4
 
 echo "Installing..."
@@ -61,8 +64,8 @@ proot-distro restore /sdcard/download/kali.tar.xz > /dev/null 2>&1
 sleep 1
 
 echo "Done"
-sleep 2
+sleep 3
 echo "You can now log in with kali"
-sleep 2
+sleep 3
 echo "Use the command kali, and kali -r with root without password"
-sleep 2
+sleep 3

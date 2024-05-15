@@ -21,7 +21,7 @@ pkg update && pkg upgrade -y
 
 echo "Installing packages Termux"
 sleep 2
-pkg up -y && pkg i -y x11-repo && pkg i -y zsh proot-distro pulseaudio termux-x11-nightly && pkg install wget git proot axel angle-android virglrenderer-android
+pkg i -y x11-repo && pkg i -y zsh proot-distro pulseaudio awk termux-x11-nightly && pkg install wget git proot axel angle-android virglrenderer-android
 
 #####################################################################################
 echo "Downloading some things"
@@ -37,21 +37,15 @@ sleep 5
 
 echo "Replace existing files with new ones"
 
-if [ -f "$HOME/AutomaticInstall/default.pa" ]; then
-    rm -rf $PREFIX/etc/pulse/default.pa
-    mv default.pa $PREFIX/etc/pulse/default.pa
-fi
+rm -f $PREFIX/etc/pulse/default.pa
+mv -f $HOME/AutomaticInstall/default.pa $PREFIX/etc/pulse/default.pa
 
-if [ -f "$HOME/AutomaticInstall/proot-distro" ]; then
-    rm -rf $PREFIX/bin/proot-distro
-    mv proot-distro $PREFIX/bin/proot-distro
-    chmod +x $PREFIX/bin/proot-distro  #Ensure it is executable
-fi
+rm -f $PREFIX/bin/proot-distro
+mv -f $HOME/AutomaticInstall/proot-distro $PREFIX/bin/proot-distro
+chmod +x $PREFIX/bin/proot-distro  # Ensure the new file is executable
 
-if [ -f "$HOME/AutomaticInstall/termux.properties" ]; then
-    rm -rf $HOME/.termux/termux.properties
-    mv termux.properties $HOME/.termux/termux.properties
-fi
+rm -f $HOME/.termux/termux.properties
+mv -f $HOME/AutomaticInstall/termux.properties $HOME/.termux/termux.properties
 
 #Remove AutomaticInstall folder
 

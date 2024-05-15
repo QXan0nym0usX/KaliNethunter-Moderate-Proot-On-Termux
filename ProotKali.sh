@@ -38,11 +38,12 @@ if [ -f "$HOME/AutomaticInstall/termux.properties" ]; then
     mv $HOME/AutomaticInstall/termux.properties $HOME/.termux/termux.properties
 fi
 
-##Remove AutomaticInstall folder
+#Remove AutomaticInstall folder
 rm -rf $HOME/AutomaticInstall
 
 ########################################################################################
 
+#If zsh doesn't work, the problem is probably your termux
 echo "Installing my zsh"
 cd $HOME
 wget -q  https://github.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/raw/main/AutomaticInstall/myzsh.tar.xz

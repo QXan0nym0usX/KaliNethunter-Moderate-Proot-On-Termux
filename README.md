@@ -59,6 +59,20 @@ kali -r
 ```
 kalis
 ```
+## Add your external SD card
+In the proot-distro text, you can mount your external SD card (if you have), you can add in the next line: 
+
+```
+nano $PREFIX/bin/proot-distro
+```
+
+Go to line 1900 with Ctrl + / and add:
+
+```
+set -- "--bind=/storage/{you SD card}:/external_sd" "$@" 
+```
+
+It has to be in the same position as the other lines above
 
 ## Termux 
 [Download](https://github.com/termux/termux-app/releases/download/v0.118.0/termux-app_v0.118.0+github-debug_universal.apk) 

@@ -1,6 +1,21 @@
 #!/bin/bash
 
-echo "Updating and upgrade Termux packages "
+spinner()
+{
+    local pid=$1
+    local delay=0.75
+    local spinstr='|/-\'
+    while [ "$(ps a | awk '{print $1}' | grep $pid)" ]; do
+        local temp=${spinstr#?}
+        printf " [%c]  " "$spinstr"
+        local spinstr=$temp${spinstr%"$temp"}
+        sleep $delay
+        printf "\b\b\b\b\b\b"
+    done
+    printf "    \b\b\b\b"
+}
+
+echo "Updating and upgrading Termux packages"
 sleep 2
 pkg update && pkg upgrade -y
 
@@ -43,7 +58,7 @@ rm -rf $HOME/AutomaticInstall
 
 ########################################################################################
 
-#If zsh doesn't work, the problem is probably your termux
+# If zsh doesn't work, the problem is probably your termux
 echo "Installing my zsh"
 cd $HOME
 wget -q  https://github.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/raw/main/AutomaticInstall/myzsh.tar.xz
@@ -53,34 +68,33 @@ chsh -s zsh
 rm -rf $HOME myzsh.tar.xz
 sleep 4
 
-echo "Installing..."
+echo -n "Installing... "
+spinner $$ &
 
 cd $PREFIX/etc/proot-distro/
-
 sleep 2
-
 wget -q https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/AutomaticInstall/kali.sh
-
 sleep 2
 
 cd $PREFIX/bin/
 wget -q https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/AutomaticInstall/kali
-
 sleep 1
 chmod +x $PREFIX/bin/kali
 
-#Restore Kali distro
+# Check if the file exists before restoring
+if [ ! -f "/sdcard/Download/kali.tar.xz" ]; then
+    echo -e "\033[0;31mError: File '/sdcard/Download/kali.tar.xz' not found.\033[0m"
+    exit 1
+fi
 
-cd $HOME
-
+# Restore Kali distro
 proot-distro restore /sdcard/Download/kali.tar.xz > /dev/null 2>&1
-sleep 1
-
-echo "Done"
+wait
+echo -e "\033[0;32mDone\033[0m"
 sleep 3
 
-echo "You can now log in with kali"
+echo -e "\033[0;32mYou can now log in with kali\033[0m"
 sleep 3
 
-echo "Use the command kali, and kali -r with root without password"
+echo -e "\033[0;32mUse the command kali, and kali -r with root without password\033[0m"
 sleep 3

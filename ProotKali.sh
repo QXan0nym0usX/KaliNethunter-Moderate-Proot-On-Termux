@@ -53,8 +53,10 @@ echo "Installing..."
 wget -q https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/AutomaticInstall/kali.sh \
 wget -q https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/AutomaticInstall/kali
 mv kali.sh $PREFIX/etc/proot-distro
+
 sleep 1
 mv kali $PREFIX/bin
+chmod +x $PREFIX/bin/kali
 proot-distro restore /sdcard/download/kali.tar.xz > /dev/null 2>&1
 sleep 1
 

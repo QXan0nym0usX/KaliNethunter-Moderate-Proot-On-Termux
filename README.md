@@ -74,6 +74,15 @@ set -- "--bind=/storage/{you SD card}:/external_sd" "$@"
 
 It has to be in the same position as the other lines above
 
+## Note
+If you want to show the battery percentage in "kali" without root use this command (SELinux in permissive mode)
+
+```
+sudo usermod -aG plugdev kali
+```
+## SELinuxModeChanger (ROOT)
+[Download](https://f-droid.org/repo/com.mrbimc.selinux_20171031.apk)
+
 ## Termux 
 [Download](https://github.com/termux/termux-app/releases/download/v0.118.0/termux-app_v0.118.0+github-debug_universal.apk) 
 

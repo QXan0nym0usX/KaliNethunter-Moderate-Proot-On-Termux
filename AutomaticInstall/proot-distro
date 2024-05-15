@@ -1896,8 +1896,6 @@ command_login() {
 				set -- "--bind=${storage_path}:/sdcard" "$@"
 				set -- "--bind=${storage_path}:/storage/emulated/0" "$@"
 				set -- "--bind=${storage_path}:/storage/self/primary" "$@"
-				# Bind the external SD card
-                                set -- "--bind=/storage/52D9-0B47:/external_sd" "$@"
 			fi
 		fi
 	fi

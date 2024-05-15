@@ -75,7 +75,7 @@ set -- "--bind=/storage/{you SD card}:/external_sd" "$@"
 It has to be in the same position as the other lines above
 
 ## Note
-If you want to show the battery percentage in "kali" without root use this command (SELinux in permissive mode)
+If you want to show the battery percentage in "kali" use this command (SELinux in permissive mode)
 
 ```
 sudo usermod -aG plugdev kali

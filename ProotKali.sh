@@ -54,19 +54,33 @@ rm -rf $HOME myzsh.tar.xz
 sleep 4
 
 echo "Installing..."
-wget -q https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/AutomaticInstall/kali.sh \
+
+cd $PREFIX/etc/proot-distro/
+
+sleep 2
+
+wget -q https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/AutomaticInstall/kali.sh
+
+sleep 2
+
+cd $PREFIX/bin/
 wget -q https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/AutomaticInstall/kali
-mv kali.sh $PREFIX/etc/proot-distro
 
 sleep 1
-mv kali $PREFIX/bin
 chmod +x $PREFIX/bin/kali
+
+#Restore Kali distro
+
+cd $HOME
+
 proot-distro restore /sdcard/Download/kali.tar.xz > /dev/null 2>&1
 sleep 1
 
 echo "Done"
 sleep 3
+
 echo "You can now log in with kali"
 sleep 3
+
 echo "Use the command kali, and kali -r with root without password"
 sleep 3

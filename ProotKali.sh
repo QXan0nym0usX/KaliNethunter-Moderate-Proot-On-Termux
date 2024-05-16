@@ -39,13 +39,16 @@ echo "Replace existing files with new ones"
 
 rm -rf $PREFIX/etc/pulse/default.pa
 mv $HOME/AutomaticInstall/default.pa $PREFIX/etc/pulse/default.pa
+sleep 2
 
 rm -rf $PREFIX/bin/proot-distro
 mv $HOME/AutomaticInstall/proot-distro $PREFIX/bin/proot-distro
 chmod +x $PREFIX/bin/proot-distro  # Ensure the new file is executable
+sleep 1
 
 rm -rf $HOME/.termux/termux.properties
 mv $HOME/AutomaticInstall/termux.properties $HOME/.termux/termux.properties
+sleep 2
 
 #Remove AutomaticInstall folder
 

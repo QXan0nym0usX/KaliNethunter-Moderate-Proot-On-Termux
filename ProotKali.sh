@@ -31,58 +31,58 @@ cd AutomaticInstall
 
 wget -q https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/AutomaticInstall/default.pa \
 && wget -q https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/AutomaticInstall/proot-distro \
-&& wget -q https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/AutomaticInstall/termux.properties
+&& wget -q https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/AutomaticInstall/termux.properties &
 
 sleep 5
 
 echo "Replace existing files with new ones"
 
-rm -f $PREFIX/etc/pulse/default.pa
-sleep 2
+rm -rf $PREFIX/etc/pulse/default.pa
 mv $HOME/AutomaticInstall/default.pa $PREFIX/etc/pulse/default.pa
 sleep 2
 
-rm -f $PREFIX/bin/proot-distro
-sleep 2
+rm -rf $PREFIX/bin/proot-distro
 mv $HOME/AutomaticInstall/proot-distro $PREFIX/bin/proot-distro
 chmod +x $PREFIX/bin/proot-distro  # Ensure the new file is executable
-sleep 2
+sleep 1
 
-rm -f $HOME/.termux/termux.properties
-sleep2
+rm -rf $HOME/.termux/termux.properties
 mv $HOME/AutomaticInstall/termux.properties $HOME/.termux/termux.properties
 sleep 2
 
 #Remove AutomaticInstall folder
+
+cd $HOME
+
 rm -rf $HOME/AutomaticInstall
-sleep 2
 
 ########################################################################################
 
 # If zsh doesn't work, the problem is probably your termux
 echo "Installing my zsh"
 cd $HOME
-wget -q https://github.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/raw/main/AutomaticInstall/myzsh.tar.xz
+wget -q  https://github.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/raw/main/AutomaticInstall/myzsh.tar.xz
 tar -xvJf myzsh.tar.xz && mv ~/zsh/.* ~/
 rm -rf ~/zsh
 chsh -s zsh
-rm -rf $HOME/myzsh.tar.xz
+rm -rf $HOME myzsh.tar.xz
 sleep 4
 
-echo -n "Installing... "
+echo -n "Wait... "
+
 cd $PREFIX/etc/proot-distro/
 sleep 2
 
-rm -f kali.sh
-sleep 2
+rm -rf $PREFIX/etc/proot-distro/kali.sh
+sleep2
 
 wget -q https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/AutomaticInstall/kali.sh
 sleep 2
 
-cd $PREFIX/bin/
+rm -rf $PREFIX/bin/kali
 sleep 2
 
-rm -f kali
+cd $PREFIX/bin/kali
 sleep 2
 
 wget -q https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/AutomaticInstall/kali
@@ -90,7 +90,7 @@ sleep 2
 chmod +x $PREFIX/bin/kali
 sleep 1
 
-# Check if the file exists before extracting
+# Check if the file exists before restoring
 if [ ! -f "/sdcard/Download/kali.tar.xz" ]; then
     echo -e "\033[0;31mError: File '/sdcard/Download/kali.tar.xz' not found.\033[0m"
     exit 1

@@ -69,7 +69,6 @@ rm -rf $HOME myzsh.tar.xz
 sleep 4
 
 echo -n "Installing... "
-spinner $$ &
 
 cd $PREFIX/etc/proot-distro/
 sleep 2
@@ -98,8 +97,10 @@ if [ ! -f "/sdcard/Download/kali.tar.xz" ]; then
 fi
 
 # Restore Kali distro
-proot-distro restore /sdcard/Download/kali.tar.xz > /dev/null 2>&1
+(proot-distro restore /sdcard/Download/kali.tar.xz > /dev/null 2>&1) &
+spinner $!
 wait
+
 echo -e "\033[0;32mDone\033[0m"
 sleep 3
 

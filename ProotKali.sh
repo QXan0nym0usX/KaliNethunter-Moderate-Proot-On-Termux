@@ -73,21 +73,23 @@ echo -n "Wait... "
 cd $PREFIX/etc/proot-distro/
 sleep 2
 
-rm -rf $PREFIX/etc/proot-distro/kali.sh
+rm -f kali.sh
 sleep 2
 
 wget -q https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/AutomaticInstall/kali.sh
 sleep 2
 
-rm -rf $PREFIX/bin/kali
+cd $HOME
 sleep 2
 
-cd $PREFIX/bin/kali
+# Download kali to a temporary location
+TEMP_KALI=$HOME/kali
+wget -q https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/AutomaticInstall/kali -O $TEMP_KALI
 sleep 2
+chmod +x $TEMP_KALI
 
-wget -q https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/AutomaticInstall/kali
-sleep 2
-chmod +x $PREFIX/bin/kali
+# Move to the final destination
+mv $TEMP_KALI $PREFIX/bin/kali
 sleep 1
 
 # Check if the file exists before restoring

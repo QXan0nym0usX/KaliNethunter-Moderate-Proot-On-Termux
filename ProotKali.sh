@@ -65,7 +65,7 @@ wget -q  https://github.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/raw
 tar -xvJf myzsh.tar.xz && mv ~/zsh/.* ~/
 rm -rf ~/zsh
 chsh -s zsh
-rm -rf $HOME myzsh.tar.xz
+rm -rf $HOME/myzsh.tar.xz
 sleep 4
 
 echo -n "Wait... "
@@ -74,7 +74,7 @@ cd $PREFIX/etc/proot-distro/
 sleep 2
 
 rm -rf $PREFIX/etc/proot-distro/kali.sh
-sleep2
+sleep 2
 
 wget -q https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/AutomaticInstall/kali.sh
 sleep 2

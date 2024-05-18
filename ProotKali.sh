@@ -73,13 +73,23 @@ spinner $$ &
 
 cd $PREFIX/etc/proot-distro/
 sleep 2
+
+rm -rf $PREFIX/etc/proot-distro/kali.sh
+sleep2
+
 wget -q https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/AutomaticInstall/kali.sh
 sleep 2
 
-cd $PREFIX/bin/
+rm -rf $PREFIX/bin/kali
+sleep 2
+
+cd $PREFIX/bin/kali
+sleep 2
+
 wget -q https://raw.githubusercontent.com/Sota4Ever/KaliNethunter-Moderate-Proot-On-Termux/main/AutomaticInstall/kali
-sleep 1
+sleep 2
 chmod +x $PREFIX/bin/kali
+sleep 1
 
 # Check if the file exists before restoring
 if [ ! -f "/sdcard/Download/kali.tar.xz" ]; then

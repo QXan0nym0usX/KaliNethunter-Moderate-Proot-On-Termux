@@ -98,6 +98,10 @@ if [ ! -f "/sdcard/Download/kali.tar.xz" ]; then
     exit 1
 fi
 
+# Creating folders to extract the compressor 
+mkdir -p $PREFIX/var/lib/dlcache
+mkdir -p $PREFIX/var/lib/proot-distro
+
 # Extract Kali tar.xz to the target directory with spinner animation
 echo -n "Extracting Kali... "
 (tar -xvf /sdcard/Download/kali.tar.xz -C /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs > /dev/null 2>&1) &
